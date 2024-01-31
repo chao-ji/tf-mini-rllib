@@ -1,0 +1,40 @@
+env:
+  class: Humanoid-v4
+
+trainer: SAC
+
+
+actor_lr: 1.e-4
+critic_lr: 1.e-4
+replay_size: 1000000 
+
+max_ep_len: 1000
+act_noise: 0.1
+polyak: 0.995
+gamma: 0.99
+num_iters: 80000000
+batch_size: 256 
+start_steps: 10000
+update_freq: 50
+update_after: 1000
+log_freq: 4000
+ckpt_freq: 4000
+
+noise_clip: 0.5
+target_noise: 0.2
+policy_delay: 2
+
+alpha: 0.2
+
+clip_ratio: 0.2
+target_kl: 0.01
+num_steps_actor: 80
+num_steps_critic: 80
+num_eval_episode: 10
+
+lam: 0.97
+
+replay:
+  render: False
+  ckpt_path: "path-to-tensorflow-checkpoint"
+  gif_filename: "replay.gif"

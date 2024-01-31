@@ -1,0 +1,21 @@
+env:
+  class: TicTacToeEnv
+  path: envs.tictactoe
+
+trainer: VPG
+
+
+actor_lr: 3.e-4
+critic_lr: 1.e-3
+clip_ratio: 0.2
+target_kl: 0.01
+num_steps_critic: 80
+num_steps_actor: 80
+num_iters: 1500
+
+gamma: 0.99
+lam: 0.97
+batch_size: 4000
+max_ep_len: 1000
+
+

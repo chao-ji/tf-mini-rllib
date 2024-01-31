@@ -1,0 +1,80 @@
+
+DiagonalGaussianMLPActor:
+  layers:
+  - units: 512
+    activation: "tanh"
+  - units: 512
+    activation: "tanh"
+  - units: 512
+    activation: "tanh"
+  - units: 6
+
+MLPCriticV:
+  layers:
+  - units: 512
+    activation: "tanh"
+  - units: 512
+    activation: "tanh"
+  - units: 512
+    activation: "tanh"
+  - units: 1
+    
+
+SquashedGaussianActor:
+  layers:
+  - units: 512
+    activation: "relu"
+  - units: 512
+    activation: "relu"
+  - units: 17
+  - units: 17
+MLPCriticQ:
+  layers:
+  - units: 512
+    activation: "relu"
+  - units: 512
+    activation: "relu"
+  - units: 1
+
+DeterministicMLPActor:
+  layers:
+  - units: 256
+    activation: "relu"
+  - units: 256
+    activation: "relu"
+  - units: 6
+    activation: "tanh"
+
+CategoricalConvActor:
+  num_act: 9
+  layers:
+  - filters: 32
+    kernel_size: 3
+    strides: 1
+    padding: "same"
+    activation: "relu"
+  - filters: 8
+    kernel_size: 3
+    strides: 1
+    padding: "same"
+    activation: "relu"
+  - filters: 1
+    kernel_size: 3
+    strides: 1
+    padding: "same"
+ConvCriticV:
+  layers:
+  - filters: 32
+    kernel_size: 3
+    strides: 1
+    padding: "same"
+    activation: "relu"
+  - filters: 8
+    kernel_size: 3
+    strides: 1
+    padding: "same"
+    activation: "relu"
+  - filters: 1
+    kernel_size: 3
+    strides: 1
+    padding: "valid"
